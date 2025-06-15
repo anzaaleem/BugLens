@@ -4,8 +4,6 @@ import {
   HttpErrorResponse,
   HttpHeaders
 } from '@angular/common/http';
-import { environment } from '../../environments/environment';
-
 export interface IErrorLog {
   message:     string;   // human-friendly message
   stack_trace: string;   // minimized stack or HTTP summary
@@ -19,10 +17,13 @@ export interface IErrorLog {
 
 @Injectable({ providedIn: 'root' })
 export class TrackitService {
-  private apiEndpoint = environment.trackerApi; // http://localhost:3000/log-error
+ // private apiEndpoint = environment.trackerApi; // http://localhost:3000/log-error
+  private buildTrackItURL: string = '/log-error';
 
   constructor(private http: HttpClient) {}
-
+set environmentApiUrl(trackitBackend: string) {
+    this.buildTrackItURL = trackitBackend + this.buildTrackItURL;
+  }
   public trackError(error: Error | HttpErrorResponse, route: string): void {
     const isHttp = error instanceof HttpErrorResponse;
     const httpErr = error as HttpErrorResponse & { httpMethod?: string };
@@ -65,7 +66,7 @@ export class TrackitService {
     console.log('TrackitService payload:', payload);
 
     // 3) Send to backend
-    this.http.post(this.apiEndpoint, payload, {
+    this.http.post(this.buildTrackItURL, payload, {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
       })
       .subscribe({
