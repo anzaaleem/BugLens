@@ -70,8 +70,8 @@ set environmentApiUrl(trackitBackend: string) {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
       })
       .subscribe({
-        next: () => console.log('TrackerService: log sent'),
-        error: e => console.error('TrackerService: send failed', e)
+        next: () => console.log('TrackitService: log sent'),
+        error: e => console.error('TrackitService: send failed', e)
       });
   }
 

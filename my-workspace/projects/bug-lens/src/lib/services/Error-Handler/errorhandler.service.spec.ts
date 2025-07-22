@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { CustomErrorHandlerService } from './custom-error-handler';
+import { CustomErrorHandlerService } from './errorhandler.service';
 import { provideHttpClient } from '@angular/common/http';
 
 describe('CustomErrorHandlerService', () => {

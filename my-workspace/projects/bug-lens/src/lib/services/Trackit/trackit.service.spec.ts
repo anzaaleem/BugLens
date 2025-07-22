@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
-import { TrackerService } from './trackit.service';
+import { TrackitService } from './trackit.service';
 
 describe('TrackitService', () => {
-  let service: TrackerService;
+  let service: TrackitService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({

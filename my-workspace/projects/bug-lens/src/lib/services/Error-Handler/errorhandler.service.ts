@@ -1,5 +1,5 @@
 import { Injectable, ErrorHandler } from '@angular/core';
-import { TrackitService } from './../Trackit/trackit.service';
+import { TrackitService } from '../Trackit/trackit.service';
 import { NavigationStart, Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 
