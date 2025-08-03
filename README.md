@@ -3,7 +3,7 @@
 ## Catch errors in Angular production environment and track their exact location details and it generates a report for you to send to ES server or a custom indexing logs api.
 
 
-To consume 'angular-prod-errors-tracking into Angular Applications, 
+To consume 'buglens into Angular Applications, 
 **
 the app needs /dist to have all map.js & .js files, your application Production build configuration should have:
 `"sourceMap":{
@@ -16,9 +16,9 @@ the app needs /dist to have all map.js & .js files, your application Production 
 
 please make sure that `@angular/cli version >= 18.0.0`, next set of steps:
 
-1) In terminal install using **Npm** `npm i angular-prod-errors-tracking` or **Yarn** `yarn add angular-prod-errors-tracking` (make sure your using correct `node >= 20`), you should check your package-lock.json (`ctrl + f`, search angular-prod-errors-tracking):
+1) In terminal install using **Npm** `npm i angular-prod-errors-tracking` or **Yarn** `yarn add angular-prod-errors-tracking` (make sure your using correct `node >= 20`), you should check your package-lock.json (`ctrl + f`, search buglens):
 ```
-"node_modules/angular-prod-errors-tracking"
+"node_modules/buglens"
 ```
 2) Usage, see below:
 
@@ -28,7 +28,7 @@ please make sure that `@angular/cli version >= 18.0.0`, next set of steps:
 
 ```
 // Importing the services from trackIt
-import { TrackitService, CustomErrorHandlerService, UpdateWorkerService } from 'angular-prod-errors-tracking';
+import { TrackitService, CustomErrorHandlerService, UpdateWorkerService } from 'buglens';
 
 @NgModule({
   providers: [
@@ -40,7 +40,7 @@ import { TrackitService, CustomErrorHandlerService, UpdateWorkerService } from '
 
 #### Set Tracking backend api url using a baseUrl without '/api' prefix.
 ```
-import { TrackitService } from 'angular-prod-errors-tracking';
+import { TrackitService } from 'buglens';
 
 constructor(private trackitSer: TrackitService) {
   this.trackitSer.environmentApiUrl = environment.baseURL;
@@ -57,7 +57,7 @@ Follow the steps at the top to install **Trackit FE** package.
 
 ```
 // Importing the services from trackIt
-import { TrackitService, CustomErrorHandlerService, UpdateWorkerService } from 'angular-prod-errors-tracking';
+import { TrackitService, CustomErrorHandlerService, UpdateWorkerService } from 'buglens';
 
 @NgModule({
   providers: [
@@ -69,7 +69,7 @@ import { TrackitService, CustomErrorHandlerService, UpdateWorkerService } from '
 
 #### Set Trackit backend api url using a baseUrl without '/api' prefix. Optional - register a service worker using TrackitService & UpdateWorkerService
 ```
-import { TrackitService, UpdateWorkerService } from 'angular-prod-errors-tracking';
+import { TrackitService, UpdateWorkerService } from 'buglens';
 
 constructor(private trackitSer: TrackitService, private readonly sww: UpdateWorkerService) {
   this.trackitSer.environmentApiUrl = environment.baseURL;
