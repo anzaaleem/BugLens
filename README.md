@@ -16,7 +16,7 @@ the app needs /dist to have all map.js & .js files, your application Production 
 
 please make sure that `@angular/cli version >= 18.0.0`, next set of steps:
 
-1) In terminal install using **Npm** `npm i angular-prod-errors-tracking` or **Yarn** `yarn add angular-prod-errors-tracking` (make sure your using correct `node >= 20`), you should check your package-lock.json (`ctrl + f`, search buglens):
+1) In terminal install using **Npm** `npm i buglens` or **Yarn** `yarn add buglens` (make sure your using correct `node >= 20`), you should check your package-lock.json (`ctrl + f`, search buglens):
 ```
 "node_modules/buglens"
 ```
